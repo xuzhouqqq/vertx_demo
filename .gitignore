@@ -1,0 +1,21 @@
+*.class
+
+# Package Files #
+.project
+.classpath
+target/
+*.jar
+*.war
+*.ear
+.idea
+.idea/*
+*.iml
+.DS_Store
+target
+mvn-repos
+*.log
+.settings
+classes
+lib
+/README(Windows+Eclipse).doc
+/classes

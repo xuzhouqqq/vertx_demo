@@ -172,7 +172,7 @@
                         <manifest>
                             <addClasspath>true</addClasspath>
                             <classpathPrefix>libs/</classpathPrefix>
-                            <mainClass>com.juyi.vertx.file.FileStartRunner</mainClass>
+                            <mainClass>com.xuzhou.vertx.DeviceServerStartRunner</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
