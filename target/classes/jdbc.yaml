@@ -1,0 +1,29 @@
+dataSources:
+  ds_master: !!com.alibaba.druid.pool.DruidDataSource
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://47.104.154.47:33306/ias?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true
+    username: mysql
+    password: mysql2018iot
+    initialSize: 1 #初始化时建立物理连接的个数
+    minEvictableIdleTimeMillis: 30000
+    timeBetweenEvictionRunsMillis: 60000 #配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒
+    maxActive: 10 #最大连接池数量
+    minIdle: 5 #最小连接池数量
+    validationQuery: SELECT 'x' #用来检测连接是否有效的sql
+  ds_slave0: !!com.alibaba.druid.pool.DruidDataSource
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://47.104.154.47:33307/ias?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true
+    username: mysql
+    password: mysql2018iot
+    initialSize: 1 #初始化时建立物理连接的个数
+    minEvictableIdleTimeMillis: 30000
+    timeBetweenEvictionRunsMillis: 60000 #配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒
+    maxActive: 10 #最大连接池数量
+    minIdle: 5 #最小连接池数量
+    validationQuery: SELECT 'x' #用来检测连接是否有效的sql
+masterSlaveRule:
+  name: ds_ms
+  masterDataSourceName: ds_master
+  slaveDataSourceNames: [ds_slave0]
+props:
+      sql.show: true
